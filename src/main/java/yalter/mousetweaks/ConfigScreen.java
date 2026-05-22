@@ -72,6 +72,10 @@ public class ConfigScreen extends Screen {
 
         this.addRenderableWidget(Button.builder(CommonComponents.GUI_DONE, button -> this.onClose())
                 .bounds(this.width / 2 - 100, this.height - 27, 200, 20).build());
+
+        this.addRenderableWidget(CycleButton.onOffBuilder(Main.config.inversePushOrder)
+                .create(this.width / 2 - 155, this.height / 6 + 24 * 6, 310, 20,
+                        Component.literal("Inverse Push Order"), (cycleButton, value) -> Main.config.inversePushOrder = value));
     }
 
     @Override
